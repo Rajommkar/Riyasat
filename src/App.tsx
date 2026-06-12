@@ -25,21 +25,28 @@ import routerProvider, {
 import axios from "axios";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import { Header } from "./components/header";
+import { Title } from "./components/layout/title";
+import { ThemedSider } from "./components/layout/sider";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import { CredentialResponse } from "./interfaces/google";
 import {
-  BlogPostCreate,
-  BlogPostEdit,
-  BlogPostList,
-  BlogPostShow,
-} from "./pages/blog-posts";
+  Login,
+  Home,
+  Agents,
+  MyProfile,
+  PropertyDetails,
+  AllProperties,
+  CreateProperty,
+  AgentProfile,
+  EditProperty,
+} from "./pages";
 import {
-  CategoryCreate,
-  CategoryEdit,
-  CategoryList,
-  CategoryShow,
-} from "./pages/categories";
-import { Login } from "./pages/login";
+  AccountCircleOutlined,
+  ChatBubbleOutline,
+  PeopleAltOutlined,
+  StarOutlineRounded,
+  VillaOutlined,
+} from "@mui/icons-material";
 import { dataProvider } from "./providers/data";
 import { parseJwt } from "./utils/parse-jwt";
 
@@ -146,23 +153,43 @@ function App() {
                 authProvider={authProvider}
                 resources={[
                   {
-                    name: "blog_posts",
-                    list: "/blog-posts",
-                    create: "/blog-posts/create",
-                    edit: "/blog-posts/edit/:id",
-                    show: "/blog-posts/show/:id",
+                    name: "property",
+                    list: "/properties",
+                    create: "/properties/create",
+                    edit: "/properties/edit/:id",
+                    show: "/properties/show/:id",
                     meta: {
-                      canDelete: true,
+                      icon: <VillaOutlined />,
                     },
                   },
                   {
-                    name: "categories",
-                    list: "/categories",
-                    create: "/categories/create",
-                    edit: "/categories/edit/:id",
-                    show: "/categories/show/:id",
+                    name: "agent",
+                    list: "/agents",
+                    show: "/agents/show/:id",
                     meta: {
-                      canDelete: true,
+                      icon: <PeopleAltOutlined />,
+                    },
+                  },
+                  {
+                    name: "review",
+                    list: "/reviews",
+                    meta: {
+                      icon: <StarOutlineRounded />,
+                    },
+                  },
+                  {
+                    name: "message",
+                    list: "/messages",
+                    meta: {
+                      icon: <ChatBubbleOutline />,
+                    },
+                  },
+                  {
+                    name: "my_profile",
+                    list: "/my-profile",
+                    meta: {
+                      label: "My Profile",
+                      icon: <AccountCircleOutlined />,
                     },
                   },
                 ]}
@@ -179,28 +206,24 @@ function App() {
                         key="authenticated-inner"
                         fallback={<CatchAllNavigate to="/login" />}
                       >
-                        <ThemedLayout Header={Header}>
+                        <ThemedLayout Header={Header} Title={({ collapsed }) => <Title collapsed={collapsed} />} Sider={ThemedSider}>
                           <Outlet />
                         </ThemedLayout>
                       </Authenticated>
                     }
                   >
-                    <Route
-                      index
-                      element={<NavigateToResource resource="blog_posts" />}
-                    />
-                    <Route path="/blog-posts">
-                      <Route index element={<BlogPostList />} />
-                      <Route path="create" element={<BlogPostCreate />} />
-                      <Route path="edit/:id" element={<BlogPostEdit />} />
-                      <Route path="show/:id" element={<BlogPostShow />} />
+                    <Route index element={<Home />} />
+                    <Route path="/properties">
+                      <Route index element={<AllProperties />} />
+                      <Route path="create" element={<CreateProperty />} />
+                      <Route path="edit/:id" element={<EditProperty />} />
+                      <Route path="show/:id" element={<PropertyDetails />} />
                     </Route>
-                    <Route path="/categories">
-                      <Route index element={<CategoryList />} />
-                      <Route path="create" element={<CategoryCreate />} />
-                      <Route path="edit/:id" element={<CategoryEdit />} />
-                      <Route path="show/:id" element={<CategoryShow />} />
+                    <Route path="/agents">
+                      <Route index element={<Agents />} />
+                      <Route path="show/:id" element={<AgentProfile />} />
                     </Route>
+                    <Route path="/my-profile" element={<MyProfile />} />
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>
                   <Route
