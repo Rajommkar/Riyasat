@@ -19,15 +19,12 @@ export const ColorModeContext = createContext<ColorModeContextType>(
 export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
   children,
 }) => {
-  const colorModeFromLocalStorage = localStorage.getItem("colorMode");
-  const isSystemPreferenceDark = window?.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
+  // Always start in light mode to match the video
+  const [mode, setMode] = useState("light");
 
-  const systemPreference = isSystemPreferenceDark ? "dark" : "light";
-  const [mode, setMode] = useState(
-    colorModeFromLocalStorage || systemPreference
-  );
+  useEffect(() => {
+    window.localStorage.setItem("colorMode", "light");
+  }, []);
 
   useEffect(() => {
     window.localStorage.setItem("colorMode", mode);

@@ -4,12 +4,13 @@ import { useEffect, useRef } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { ThemedTitle } from "@refinedev/mui";
-
+import Stack from "@mui/material/Stack";
 import { CredentialResponse } from "../interfaces/google";
+import { logo } from "../assets";
 
-// Todo: Update your Google Client ID here
+// Todo: Update your Google Client ID here or use Vite env var VITE_GOOGLE_CLIENT_ID
 const GOOGLE_CLIENT_ID =
+  import.meta.env.VITE_GOOGLE_CLIENT_ID ||
   "1041339102270-e1fpe2b6v6u1didfndh7jkjmpcashs4f.apps.googleusercontent.com";
 
 export const Login: React.FC = () => {
@@ -47,27 +48,32 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <Container
-      style={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+    <Box
+      component="div"
+      sx={{
+        backgroundColor: "#fcfcfc",
       }}
     >
-      <Box
-        display="flex"
-        gap="36px"
-        justifyContent="center"
-        flexDirection="column"
+      <Container
+        style={{
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <ThemedTitle
-          collapsed={false}
-          wrapperStyles={{
-            fontSize: "22px",
-            justifyContent: "center",
-          }}
-        />
+        <Box
+          display="flex"
+          gap="36px"
+          justifyContent="center"
+          flexDirection="column"
+        >
+          <Stack direction="row" alignItems="center" justifyContent="center" gap="12px">
+            <img src={logo} alt="Riyasat Logo" width="40px" />
+            <Typography variant="h4" fontWeight={700} color="text.primary">
+              Riyasat
+            </Typography>
+          </Stack>
 
         <GoogleButton />
 
@@ -80,7 +86,8 @@ export const Login: React.FC = () => {
           />
           Google
         </Typography>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
   );
 };
