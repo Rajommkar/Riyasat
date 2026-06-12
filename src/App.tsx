@@ -153,7 +153,7 @@ function App() {
                 authProvider={authProvider}
                 resources={[
                   {
-                    name: "property",
+                    name: "properties",
                     list: "/properties",
                     create: "/properties/create",
                     edit: "/properties/edit/:id",
@@ -163,7 +163,7 @@ function App() {
                     },
                   },
                   {
-                    name: "agent",
+                    name: "agents",
                     list: "/agents",
                     show: "/agents/show/:id",
                     meta: {
@@ -171,14 +171,14 @@ function App() {
                     },
                   },
                   {
-                    name: "review",
+                    name: "reviews",
                     list: "/reviews",
                     meta: {
                       icon: <StarOutlineRounded />,
                     },
                   },
                   {
-                    name: "message",
+                    name: "messages",
                     list: "/messages",
                     meta: {
                       icon: <ChatBubbleOutline />,
