@@ -16,10 +16,12 @@ const CustomButton = ({ type, title, backgroundColor, color, fullWidth, icon, ha
         fontSize: 16,
         fontWeight: 600,
         gap: "10px",
-        textTransform: "capitalize",
+        transition: "all 0.3s ease",
         "&:hover": {
           opacity: 0.9,
           backgroundColor,
+          transform: "translateY(-2px)",
+          boxShadow: "0 8px 15px rgba(0,0,0,0.15)",
         },
       }}
       onClick={handleClick}
