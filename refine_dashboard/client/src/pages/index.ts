@@ -7,3 +7,4 @@ export { default as CreateProperty } from './create-property';
 export { default as EditProperty } from './edit-property';
 export { default as MyProfile } from './my-profile';
 export { default as PropertyDetails } from './property-details';
+export { default as Reviews } from './review';

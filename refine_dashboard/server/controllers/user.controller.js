@@ -2,7 +2,7 @@ import User from '../mongodb/models/user.js';
 
 const getAllUsers = async (req, res) => {
     try {
-        const users = await User.find({}).limit(req.query._end);
+        const users = await User.find({}).limit(req.query._end).populate('allProperties').lean();
         const count = await User.countDocuments({});
 
         res.header('x-total-count', count);
@@ -40,7 +40,7 @@ const getUserInfoByID = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const user = await User.findOne({ _id: id }).populate('allProperties');
+        const user = await User.findOne({ _id: id }).populate('allProperties').lean();
 
         if (user) {
             res.status(200).json(user);

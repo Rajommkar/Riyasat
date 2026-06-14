@@ -29,17 +29,17 @@ import { Title } from "./components/layout/title";
 import { ThemedSider } from "./components/layout/sider";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import { CredentialResponse } from "./interfaces/google";
-import {
-  Login,
-  Home,
-  Agents,
-  MyProfile,
-  PropertyDetails,
-  AllProperties,
-  CreateProperty,
-  AgentProfile,
-  EditProperty,
-} from "./pages";
+import React, { lazy, Suspense } from "react";
+const Login = lazy(() => import("./pages/login").then(m => ({ default: m.Login })));
+const Home = lazy(() => import("./pages/home"));
+const Agents = lazy(() => import("./pages/agent"));
+const MyProfile = lazy(() => import("./pages/my-profile"));
+const PropertyDetails = lazy(() => import("./pages/property-details"));
+const AllProperties = lazy(() => import("./pages/all-properties"));
+const CreateProperty = lazy(() => import("./pages/create-property"));
+const AgentProfile = lazy(() => import("./pages/agent-profile"));
+const EditProperty = lazy(() => import("./pages/edit-property"));
+const Reviews = lazy(() => import("./pages/review"));
 import {
   AccountCircleOutlined,
   ChatBubbleOutline,
@@ -239,7 +239,9 @@ function App() {
                         fallback={<CatchAllNavigate to="/login" />}
                       >
                         <ThemedLayout Header={Header} Title={({ collapsed }) => <Title collapsed={collapsed} />} Sider={ThemedSider}>
-                          <Outlet />
+                          <Suspense fallback={<div>Loading...</div>}>
+                            <Outlet />
+                          </Suspense>
                         </ThemedLayout>
                       </Authenticated>
                     }
@@ -255,6 +257,7 @@ function App() {
                       <Route index element={<Agents />} />
                       <Route path="show/:id" element={<AgentProfile />} />
                     </Route>
+                    <Route path="/reviews" element={<Reviews />} />
                     <Route path="/my-profile" element={<MyProfile />} />
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

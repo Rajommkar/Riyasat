@@ -36,7 +36,8 @@ const getAllProperties = async (req, res) => {
         const properties = await Property.find(query)
             .limit(_end)
             .skip(_start)
-            .sort(sortQuery);
+            .sort(sortQuery)
+            .lean();
 
         res.header("x-total-count", count);
         res.header("Access-Control-Expose-Headers", "x-total-count");
@@ -49,7 +50,7 @@ const getAllProperties = async (req, res) => {
 const getPropertyDetail = async (req, res) => {
     try {
         const { id } = req.params;
-        const propertyExists = await Property.findOne({ _id: id }).populate('creator');
+        const propertyExists = await Property.findOne({ _id: id }).populate('creator').lean();
 
         if (propertyExists) {
             res.status(200).json(propertyExists);

@@ -5,9 +5,11 @@ import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import { useGetIdentity } from "@refinedev/core";
 import { HamburgerMenu, RefineThemedLayoutHeaderProps } from "@refinedev/mui";
-import React from "react";
+import React, { useContext } from "react";
+import { ColorModeContext } from "../../contexts/color-mode";
 
 type IUser = {
   id: number;
@@ -20,6 +22,7 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
 }) => {
 
   const { data: user } = useGetIdentity<IUser>();
+  const { mode, setMode } = useContext(ColorModeContext);
 
   return (
     <AppBar position={sticky ? "sticky" : "relative"} elevation={0} sx={{ backgroundColor: "#fcfcfc" }}>
@@ -36,8 +39,15 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
             width="100%"
             justifyContent="flex-end"
             alignItems="center"
+            gap="16px"
           >
 
+            <IconButton
+              onClick={() => setMode()}
+              color="inherit"
+            >
+              {mode === "dark" ? <LightModeOutlined sx={{color: "#11142d"}} /> : <DarkModeOutlined sx={{color: "#11142d"}} />}
+            </IconButton>
 
             {(user?.avatar || user?.name) && (
               <Stack
@@ -53,6 +63,7 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
                         xs: "none",
                         sm: "inline-block",
                       },
+                      color: "#11142d"
                     }}
                     variant="subtitle2"
                   >
@@ -68,3 +79,4 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
     </AppBar>
   );
 };
+
