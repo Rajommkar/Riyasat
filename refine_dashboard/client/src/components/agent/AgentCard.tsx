@@ -8,7 +8,7 @@ import { AgentCardProp, InfoBarProps } from "../../interfaces/agent";
 const InfoBar = ({ icon, name }: InfoBarProps) => (
     <Stack flex={1} minWidth={{ xs: "100%", sm: 300 }} gap={1.5} direction="row">
         {icon}
-        <Typography fontSize={14} color="#808191">
+        <Typography fontSize={14} color="text.secondary">
             {name}
         </Typography>
     </Stack>
@@ -47,7 +47,7 @@ const AgentCard = ({
                     boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.1)",
                 },
                 textDecoration: "none",
-                bgcolor: "#fcfcfc",
+                bgcolor: "background.paper",
                 borderRadius: "15px",
             }}
         >
@@ -66,10 +66,10 @@ const AgentCard = ({
                 gap={{ xs: 4, sm: 2 }}
             >
                 <Stack gap={2} direction="row" flexWrap="wrap" alignItems="center">
-                    <Typography fontSize={22} fontWeight={600} color="#11142d">
+                    <Typography fontSize={22} fontWeight={600} color="text.primary">
                         {name}
                     </Typography>
-                    <Typography fontSize={14} color="#808191">
+                    <Typography fontSize={14} color="text.secondary">
                         Real-Estate Agent
                     </Typography>
                 </Stack>
@@ -81,19 +81,19 @@ const AgentCard = ({
                     gap={2}
                 >
                     <InfoBar
-                        icon={<EmailOutlined sx={{ color: "#808191" }} />}
+                        icon={<EmailOutlined sx={{ color: "text.secondary" }} />}
                         name={email}
                     />
                     <InfoBar
-                        icon={<Place sx={{ color: "#808191" }} />}
+                        icon={<Place sx={{ color: "text.secondary" }} />}
                         name={displayLocation}
                     />
                     <InfoBar
-                        icon={<Phone sx={{ color: "#808191" }} />}
+                        icon={<Phone sx={{ color: "text.secondary" }} />}
                         name="+502-3231-4141"
                     />
                     <InfoBar
-                        icon={<LocationCity sx={{ color: "#808191" }} />}
+                        icon={<LocationCity sx={{ color: "text.secondary" }} />}
                         name={`${noOfProperties} Properties`}
                     />
                 </Stack>

@@ -96,22 +96,22 @@ const reviewsData = [
 const Reviews = () => {
     return (
         <Box>
-            <Typography fontSize={25} fontWeight={700} color="#11142d" mb={3}>
+            <Typography fontSize={25} fontWeight={700} color="text.primary" mb={3}>
                 Client Reviews
             </Typography>
 
             <Grid container spacing={3}>
                 {reviewsData.map((review) => (
                     <Grid item xs={12} md={6} lg={4} key={review.id}>
-                        <Card sx={{ borderRadius: "15px", height: '100%', boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.1)", bgcolor: "#fcfcfc" }}>
+                        <Card sx={{ borderRadius: "15px", height: '100%', boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.1)", bgcolor: "background.paper" }}>
                             <CardContent sx={{ p: 3 }}>
                                 <Stack direction="row" spacing={2} alignItems="center" mb={2}>
                                     <Avatar src={review.avatar} sx={{ width: 56, height: 56 }} />
                                     <Box>
-                                        <Typography fontWeight={600} fontSize={16} color="#11142d">
+                                        <Typography fontWeight={600} fontSize={16} color="text.primary">
                                             {review.name}
                                         </Typography>
-                                        <Typography fontSize={12} color="#808191">
+                                        <Typography fontSize={12} color="text.secondary">
                                             {review.date}
                                         </Typography>
                                     </Box>
@@ -123,7 +123,7 @@ const Reviews = () => {
                                     {review.property}
                                 </Typography>
                                 
-                                <Typography fontSize={14} color="#808191" sx={{ fontStyle: 'italic' }}>
+                                <Typography fontSize={14} color="text.secondary" sx={{ fontStyle: 'italic' }}>
                                     "{review.text}"
                                 </Typography>
                             </CardContent>

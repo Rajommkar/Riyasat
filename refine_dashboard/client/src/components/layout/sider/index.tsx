@@ -323,7 +323,7 @@ export const ThemedSider: React.FC<RefineThemedLayoutSiderProps> = ({
                 minWidth: "24px",
                 transition: "margin-right 0.3s",
                 marginRight: siderCollapsed ? "0px" : "12px",
-                color: "#808191",
+                color: "text.secondary",
                 fontSize: "14px",
               }}
             >
@@ -377,7 +377,7 @@ export const ThemedSider: React.FC<RefineThemedLayoutSiderProps> = ({
           borderRadius: "12px",
           minHeight: "56px",
           width: "90%",
-          color: "#808191",
+          color: "text.secondary",
           backgroundColor: "transparent",
           "&:hover": {
             backgroundColor: "#1e36e8",
@@ -432,7 +432,7 @@ export const ThemedSider: React.FC<RefineThemedLayoutSiderProps> = ({
       sx={{
         flexGrow: 1,
         paddingTop: "16px",
-        backgroundColor: "#fcfcfc",
+        backgroundColor: "background.paper",
       }}
     >
       {renderSider()}
@@ -500,7 +500,7 @@ export const ThemedSider: React.FC<RefineThemedLayoutSiderProps> = ({
             display: { xs: "none", md: "block" },
             "& .MuiDrawer-paper": {
               width: drawerWidth(),
-              backgroundColor: "#fcfcfc",
+              backgroundColor: "background.paper",
               borderRight: "0px",
               overflow: "hidden",
               transition: "width 200ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
@@ -523,7 +523,7 @@ export const ThemedSider: React.FC<RefineThemedLayoutSiderProps> = ({
               variant: "outlined",
               borderRadius: 0,
               borderBottom: "0px",
-              backgroundColor: "#fcfcfc",
+              backgroundColor: "background.paper",
             }}
           >
             <RenderToTitle collapsed={siderCollapsed} />
@@ -555,7 +555,7 @@ export const ThemedSider: React.FC<RefineThemedLayoutSiderProps> = ({
               flexGrow: 1,
               overflowX: "hidden",
               overflowY: "auto",
-              backgroundColor: "#fcfcfc",
+              backgroundColor: "background.paper",
             }}
           >
             {drawer}

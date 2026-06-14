@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <Box>
-      <Typography fontSize={25} fontWeight={700} color="#11142D">
+      <Typography fontSize={25} fontWeight={700} color="text.primary">
         Dashboard
       </Typography>
 
@@ -69,13 +69,13 @@ const Home = () => {
         flex={1}
         borderRadius="15px"
         padding="20px"
-        bgcolor="#fcfcfc"
+        bgcolor="background.paper"
         display="flex"
         flexDirection="column"
         minWidth="100%"
         mt="25px"
       >
-        <Typography fontSize="18px" fontWeight={600} color="#11142d">
+        <Typography fontSize="18px" fontWeight={600} color="text.primary">
           Latest Properties
         </Typography>
 

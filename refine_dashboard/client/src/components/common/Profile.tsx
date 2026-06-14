@@ -12,7 +12,7 @@ function checkImage(url: any) {
 
 const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
     <Box>
-        <Typography fontSize={25} fontWeight={700} color="#11142D">
+        <Typography fontSize={25} fontWeight={700} color="text.primary">
             {type} Profile
         </Typography>
 
@@ -20,7 +20,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
             mt="20px"
             borderRadius="15px"
             padding="20px"
-            bgcolor="#FCFCFC"
+            bgcolor="background.paper"
         >
             <Box
                 sx={{
@@ -76,11 +76,11 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                 <Typography
                                     fontSize={22}
                                     fontWeight={600}
-                                    color="#11142D"
+                                    color="text.primary"
                                 >
                                     {name}
                                 </Typography>
-                                <Typography fontSize={16} color="#808191">
+                                <Typography fontSize={16} color="text.secondary">
                                     Realestate Agent
                                 </Typography>
                             </Stack>
@@ -90,7 +90,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                     <Typography
                                         fontSize={14}
                                         fontWeight={500}
-                                        color="#808191"
+                                        color="text.secondary"
                                     >
                                         Address
                                     </Typography>
@@ -100,10 +100,10 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                         alignItems="center"
                                         gap="10px"
                                     >
-                                        <Place sx={{ color: "#11142D" }} />
+                                        <Place sx={{ color: "text.primary" }} />
                                         <Typography
                                             fontSize={14}
-                                            color="#11142D"
+                                            color="text.primary"
                                         >
                                             4517 Washington Ave. Manchaster,
                                             Kentucky 39495
@@ -121,7 +121,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                         <Typography
                                             fontSize={14}
                                             fontWeight={500}
-                                            color="#808191"
+                                            color="text.secondary"
                                         >
                                             Phone Number
                                         </Typography>
@@ -131,10 +131,10 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                             alignItems="center"
                                             gap="10px"
                                         >
-                                            <Phone sx={{ color: "#11142D" }} />
+                                            <Phone sx={{ color: "text.primary" }} />
                                             <Typography
                                                 fontSize={14}
-                                                color="#11142D"
+                                                color="text.primary"
                                             >
                                                 +0123 456 7890
                                             </Typography>
@@ -145,7 +145,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                         <Typography
                                             fontSize={14}
                                             fontWeight={500}
-                                            color="#808191"
+                                            color="text.secondary"
                                         >
                                             Email
                                         </Typography>
@@ -155,10 +155,10 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                                             alignItems="center"
                                             gap="10px"
                                         >
-                                            <Email sx={{ color: "#11142D" }} />
+                                            <Email sx={{ color: "text.primary" }} />
                                             <Typography
                                                 fontSize={14}
-                                                color="#11142D"
+                                                color="text.primary"
                                             >
                                                 {email}
                                             </Typography>
@@ -177,9 +177,9 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                 mt="2.5rem"
                 borderRadius="15px"
                 padding="20px"
-                bgcolor="#FCFCFC"
+                bgcolor="background.paper"
             >
-                <Typography fontSize={18} fontWeight={600} color="#11142D">
+                <Typography fontSize={18} fontWeight={600} color="text.primary">
                     {type} Properties
                 </Typography>
 

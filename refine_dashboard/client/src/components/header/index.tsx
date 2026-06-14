@@ -25,7 +25,7 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
   const { mode, setMode } = useContext(ColorModeContext);
 
   return (
-    <AppBar position={sticky ? "sticky" : "relative"} elevation={0} sx={{ backgroundColor: "#fcfcfc" }}>
+    <AppBar position={sticky ? "sticky" : "relative"} elevation={0} sx={{ backgroundColor: "background.paper" }}>
       <Toolbar>
         <Stack
           direction="row"
@@ -46,7 +46,7 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
               onClick={() => setMode()}
               color="inherit"
             >
-              {mode === "dark" ? <LightModeOutlined sx={{color: "#11142d"}} /> : <DarkModeOutlined sx={{color: "#11142d"}} />}
+              {mode === "dark" ? <LightModeOutlined sx={{color: "text.primary"}} /> : <DarkModeOutlined sx={{color: "text.primary"}} />}
             </IconButton>
 
             {(user?.avatar || user?.name) && (
@@ -63,7 +63,7 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
                         xs: "none",
                         sm: "inline-block",
                       },
-                      color: "#11142d"
+                      color: "text.primary"
                     }}
                     variant="subtitle2"
                   >

@@ -280,10 +280,10 @@ const PropertyDetails = () => {
             className="fade-in-slide-up"
             borderRadius="15px"
             padding="20px"
-            bgcolor="#fcfcfc"
+            bgcolor="background.paper"
             width="fit-content"
         >
-            <Typography fontSize={25} fontWeight={700} color="#11142d">
+            <Typography fontSize={25} fontWeight={700} color="text.primary">
                 Details
             </Typography>
 
@@ -301,7 +301,7 @@ const PropertyDetails = () => {
 
                     <Box mt="15px">
                         <Stack direction="row" justifyContent="space-between" flexWrap="wrap" alignItems="center">
-                            <Typography fontSize={18} fontWeight={500} color="#11142d" textTransform="capitalize">
+                            <Typography fontSize={18} fontWeight={500} color="text.primary" textTransform="capitalize">
                                 {propertyDetails.propertyType}
                             </Typography>
                             <Box>
@@ -312,31 +312,31 @@ const PropertyDetails = () => {
                         </Stack>
 
                         <Stack direction="row" alignItems="center" gap={0.5} mt={0.5}>
-                            <Place sx={{ color: '#808191' }} />
-                            <Typography fontSize={14} color="#808191">
+                            <Place sx={{ color: "text.secondary" }} />
+                            <Typography fontSize={14} color="text.secondary">
                                 {propertyDetails.location}
                             </Typography>
                         </Stack>
 
-                        <Typography fontSize={22} fontWeight={600} color="#11142d" mt={2}>
+                        <Typography fontSize={22} fontWeight={600} color="text.primary" mt={2}>
                             {propertyDetails.title}
                         </Typography>
 
-                        <Typography fontSize={18} fontWeight={500} color="#11142d" mt={2}>
+                        <Typography fontSize={18} fontWeight={500} color="text.primary" mt={2}>
                             Price
                         </Typography>
                         <Typography fontSize={25} fontWeight={700} color="#475BE8">
                             ${propertyDetails.price}
                         </Typography>
 
-                        <Typography fontSize={18} fontWeight={500} color="#11142d" mt={2}>
+                        <Typography fontSize={18} fontWeight={500} color="text.primary" mt={2}>
                             Description
                         </Typography>
-                        <Typography fontSize={14} color="#808191">
+                        <Typography fontSize={14} color="text.secondary">
                             {propertyDetails.description}
                         </Typography>
                         
-                        <Typography fontSize={22} fontWeight={600} color="#11142d" mt={4} mb={2}>
+                        <Typography fontSize={22} fontWeight={600} color="text.primary" mt={4} mb={2}>
                             Property Gallery
                         </Typography>
                         <Grid container spacing={2}>
@@ -389,39 +389,39 @@ const PropertyDetails = () => {
                         />
 
                         <Box mt="15px" display="flex" flexDirection="column" alignItems="center">
-                            <Typography fontSize={22} fontWeight={600} color="#11142d">
+                            <Typography fontSize={22} fontWeight={600} color="text.primary">
                                 {propertyDetails.creator?.name}
                             </Typography>
-                            <Typography mt="5px" fontSize={14} color="#808191">
+                            <Typography mt="5px" fontSize={14} color="text.secondary">
                                 Real-Estate Agent
                             </Typography>
                         </Box>
 
                         <Stack mt="15px" direction="column" gap={2} width="100%">
                             <Stack direction="row" gap={1.5}>
-                                <EmailOutlined sx={{ color: '#808191' }} />
-                                <Typography fontSize={14} color="#808191">
+                                <EmailOutlined sx={{ color: "text.secondary" }} />
+                                <Typography fontSize={14} color="text.secondary">
                                     {propertyDetails.creator?.email}
                                 </Typography>
                             </Stack>
 
                             <Stack direction="row" gap={1.5}>
-                                <Place sx={{ color: '#808191' }} />
-                                <Typography fontSize={14} color="#808191">
+                                <Place sx={{ color: "text.secondary" }} />
+                                <Typography fontSize={14} color="text.secondary">
                                     {propertyDetails.creator?.allProperties?.[0]?.location || propertyDetails.location}
                                 </Typography>
                             </Stack>
 
                             <Stack direction="row" gap={1.5}>
-                                <PhoneOutlined sx={{ color: '#808191' }} />
-                                <Typography fontSize={14} color="#808191">
+                                <PhoneOutlined sx={{ color: "text.secondary" }} />
+                                <Typography fontSize={14} color="text.secondary">
                                     +502-3231-4141
                                 </Typography>
                             </Stack>
 
                             <Stack direction="row" gap={1.5}>
-                                <LocationCity sx={{ color: '#808191' }} />
-                                <Typography fontSize={14} color="#808191">
+                                <LocationCity sx={{ color: "text.secondary" }} />
+                                <Typography fontSize={14} color="text.secondary">
                                     {propertyDetails.creator?.allProperties?.length || 0} Properties
                                 </Typography>
                             </Stack>

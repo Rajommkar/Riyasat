@@ -25,11 +25,11 @@ const Form = ({
 }: FormProps) => {
   return (
     <Box>
-      <Typography fontSize={25} fontWeight={700} color="#11142d">
+      <Typography fontSize={25} fontWeight={700} color="text.primary">
         {type} a Property
       </Typography>
 
-      <Box mt={2.5} borderRadius="15px" padding="20px" bgcolor="#fcfcfc">
+      <Box mt={2.5} borderRadius="15px" padding="20px" bgcolor="background.paper">
         <form
           style={{
             marginTop: "20px",
@@ -46,7 +46,7 @@ const Form = ({
                 fontWeight: 500,
                 margin: "10px 0",
                 fontSize: 16,
-                color: "#11142d",
+                color: "text.primary",
               }}
             >
               Enter Property Name
@@ -67,7 +67,7 @@ const Form = ({
                 fontWeight: 500,
                 margin: "10px 0",
                 fontSize: 16,
-                color: "#11142d",
+                color: "text.primary",
               }}
             >
               Enter Property Description
@@ -97,7 +97,7 @@ const Form = ({
                   fontWeight: 500,
                   margin: "10px 0",
                   fontSize: 16,
-                  color: "#11142d",
+                  color: "text.primary",
                 }}
               >
                 Select Property Type
@@ -130,7 +130,7 @@ const Form = ({
                   fontWeight: 500,
                   margin: "10px 0",
                   fontSize: 16,
-                  color: "#11142d",
+                  color: "text.primary",
                 }}
               >
                 Enter Property Price
@@ -153,7 +153,7 @@ const Form = ({
                 fontWeight: 500,
                 margin: "10px 0",
                 fontSize: 16,
-                color: "#11142d",
+                color: "text.primary",
               }}
             >
               Enter Location
@@ -171,7 +171,7 @@ const Form = ({
           <Stack direction="column" gap={1} justifyContent="center" mb={2}>
             <Stack direction="row" gap={2}>
               <Typography
-                color="#11142d"
+                color="text.primary"
                 fontSize={16}
                 fontWeight={500}
                 my="10px"
@@ -202,7 +202,7 @@ const Form = ({
             </Stack>
             <Typography
               fontSize={14}
-              color="#808191"
+              color="text.secondary"
               sx={{ wordBreak: "break-all" }}
             >
               {propertyImage?.name}
