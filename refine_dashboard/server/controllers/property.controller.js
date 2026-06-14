@@ -74,7 +74,7 @@ const createProperty = async (req, res) => {
 
         const photoUrl = await cloudinary.uploader.upload(photo);
 
-        const newProperty = await Property.create({
+        const newProperty = new Property({
             title,
             description,
             propertyType,
@@ -83,6 +83,7 @@ const createProperty = async (req, res) => {
             photo: photoUrl.url,
             creator: user._id
         });
+        await newProperty.save({ session });
 
         user.allProperties.push(newProperty._id);
         await user.save({ session });
